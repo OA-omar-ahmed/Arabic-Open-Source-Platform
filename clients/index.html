@@ -1,0 +1,2952 @@
+<?php include_once("load_all_includes_header.php"); ?>
+
+<html>
+
+<head>
+  <!--<script src="./js/index-a30b17cdecae90149cf2.js.download"></script>-->
+</head>
+<?php  if(!isset( $_SESSION['session_name_user_client'] ) ){ exit('<meta http-equiv="Refresh" content="0;url=login.php">');  }  ?>
+
+<hr />
+
+<style>
+  .OA3Css-btn:hover,
+  .OA3Css-btn:active {
+    background-color: #ffffff;
+    color: #4CAF50;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+
+  .OA3Css-btn:hover,
+  .OA3Css-btn-block:hover,
+  .OA3Css-btn-floating:hover,
+  .OA3Css-btn-floating-large:hover {
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+
+  .OA3Css-btn,
+  .OA3Css-btn:link,
+  .OA3Css-btn:visited {
+    color: #FFFFFF;
+    background-color: #4CAF50;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+  }
+
+  .OA3Css-black,
+  .OA3Css-hover-black:hover {
+    color: #fff !important;
+    background-color: #000 !important;
+  }
+
+  .OA3Css-btn,
+  .OA3Css-btn-floating,
+  .OA3Css-dropnav a,
+  .OA3Css-btn-floating-large,
+  .OA3Css-btn-block,
+  .OA3Css-hover-shadow,
+  .OA3Css-hover-opacity,
+  .OA3Css-navbar a,
+  .OA3Css-sidenav a,
+  .OA3Css-pagination li a,
+  .OA3Css-hoverable tbody tr,
+  .OA3Css-hoverable li,
+  .OA3Css-accordion-content a,
+  .OA3Css-dropdown-content a,
+  .OA3Css-dropdown-click:hover,
+  .OA3Css-dropdown-hover:hover,
+  .OA3Css-opennav,
+  .OA3Css-closenav,
+  .OA3Css-closebtn,
+  .OA3Css-hover-amber,
+  .OA3Css-hover-aqua,
+  .OA3Css-hover-blue,
+  .OA3Css-hover-light-blue,
+  .OA3Css-hover-brown,
+  .OA3Css-hover-cyan,
+  .OA3Css-hover-blue-grey,
+  .OA3Css-hover-green,
+  .OA3Css-hover-light-green,
+  .OA3Css-hover-indigo,
+  .OA3Css-hover-khaki,
+  .OA3Css-hover-lime,
+  .OA3Css-hover-orange,
+  .OA3Css-hover-deep-orange,
+  .OA3Css-hover-pink,
+  .OA3Css-hover-purple,
+  .OA3Css-hover-deep-purple,
+  .OA3Css-hover-red,
+  .OA3Css-hover-sand,
+  .OA3Css-hover-teal,
+  .OA3Css-hover-yellow,
+  .OA3Css-hover-white,
+  .OA3Css-hover-black,
+  .OA3Css-hover-grey,
+  .OA3Css-hover-light-grey,
+  .OA3Css-hover-dark-grey,
+  .OA3Css-hover-text-amber,
+  .OA3Css-hover-text-aqua,
+  .OA3Css-hover-text-blue,
+  .OA3Css-hover-text-light-blue,
+  .OA3Css-hover-text-brown,
+  .OA3Css-hover-text-cyan,
+  .OA3Css-hover-text-blue-grey,
+  .OA3Css-hover-text-green,
+  .OA3Css-hover-text-light-green,
+  .OA3Css-hover-text-indigo,
+  .OA3Css-hover-text-khaki,
+  .OA3Css-hover-text-lime,
+  .OA3Css-hover-text-orange,
+  .OA3Css-hover-text-deep-orange,
+  .OA3Css-hover-text-pink,
+  .OA3Css-hover-text-purple,
+  .OA3Css-hover-text-deep-purple,
+  .OA3Css-hover-text-red,
+  .OA3Css-hover-text-sand,
+  .OA3Css-hover-text-teal,
+  .OA3Css-hover-text-yellow,
+  .OA3Css-hover-text-white,
+  .OA3Css-hover-text-black,
+  .OA3Css-hover-text-grey,
+  .OA3Css-hover-text-light-grey,
+  .OA3Css-hover-text-dark-grey {
+    -webkit-transition: background-color .3s, color .15s, box-shadow .3s, opacity 0.3s;
+    transition: background-color .3s, color .15s, box-shadow .3s, opacity 0.3s;
+  }
+
+  .OA3Css-btn,
+  .OA3Css-btn-floating,
+  .OA3Css-btn-floating-large,
+  .OA3Css-closenav,
+  .OA3Css-opennav {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .OA3Css-btn,
+  .OA3Css-btn-block {
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 6px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none !important;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  button,
+  html input[type=button],
+  input[type=reset],
+  input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+  }
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  button {
+    overflow: visible;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    margin: 0;
+  }
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+
+  button {
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+  }
+
+  .OA3Css-white,
+  .OA3Css-hover-white:hover {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+
+  .OA3Css-light-grey,
+  .OA3Css-hover-light-grey:hover {
+    color: #000 !important;
+    background-color: #f1f1f1 !important;
+  }
+
+  html,
+  body {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+</style>
+
+______________
+
+
+<style>
+  .faicons {
+    font-size: 48px;
+  }
+
+  /* Popup container - can be anything you want */
+  .popup01 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* The actual popup */
+  .popup01 .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+
+  /* Popup arrow */
+  .popup01 .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  /* Toggle this class - hide and show the popup */
+  .showpopup01 {
+    visibility: visible !important;
+    -webkit-animation: Popupfade 0.2s;
+    animation: Popupfade 0.2s;
+  }
+
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes Popupfade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes Popupfade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  @media screen and (max-width: 601px) {
+    .firstcard {
+      margin-bottom: 4px !important;
+    }
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  .slfade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  .sldot {
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+
+
+  .slprev,
+  .slnext {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: auto;
+    padding: 16px;
+    top: 50%;
+    margin-top: -22px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .slprev:hover,
+  .slnext:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .slnext {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .sltext {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  @media only screen and (max-width: 400px) {
+
+    .slprev,
+    .slnext,
+    .text {
+      font-size: 12px;
+    }
+  }
+
+
+  .slideractive,
+  .sldot:hover {
+    background-color: #717171;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  #myInputTableSearch_OA_ {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+
+  #myTableSearch_OA_ {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+  #myTableSearch_OA_ th,
+  #myTableSearch_OA_ td {
+    border: none;
+    text-align: left;
+    padding: 12px;
+  }
+
+  #myTableSearch_OA_ tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  #myTableSearch_OA_ tr:hover {
+    background-color: #e2e2e2;
+  }
+
+  #myFilterList_oa_eInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+
+  #myFilterList_oa_eUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #myFilterList_oa_eUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    xfont-size: 16px;
+    color: black;
+    display: block
+  }
+
+  #myFilterList_oa_eUL li a.header {
+    background-color: #e2e2e2;
+    cursor: default;
+  }
+
+  #myFilterList_oa_eUL li a:hover:not(.header) {
+    background-color: #eee;
+  }
+
+  .OA3Css-success {
+    background-color: #e7f3fe;
+    border-left: 6px solid #2196F3;
+  }
+
+  #container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-color: #e7e7e7;
+  }
+
+  #animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: #4CAF50;
+  }
+
+  #progress {
+    width: 100%;
+    height: 32px;
+    position: relative;
+    background-color: #ddd;
+  }
+
+  #bar {
+    background-color: #4CAF50;
+    width: 10px;
+    height: 32px;
+    position: absolute;
+  }
+
+  .pressed {
+    display: inline-block;
+    padding: 14px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 10px 0;
+    width: 130px;
+  }
+
+  .pressed:hover {
+    background-color: #3e8e41
+  }
+
+  .pressed:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .OA3Css-half {
+      margin-top: 20px;
+    }
+  }
+
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1
+  }
+
+  .dropdown2:hover .dropdown-content {
+    display: block;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .dropbtn {
+      width: 100%;
+    }
+
+    .dropdown-content {
+      width: 100px;
+    }
+  }
+
+  .show {
+    display: block;
+  }
+
+  table.responsivetest {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+  table.responsivetest th,
+  table.responsivetest td {
+    border: none;
+    text-align: left;
+    padding: 8px;
+  }
+
+  table.responsivetest tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  .loader {
+    border: 16px solid #f3f3f3;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: 20%;
+  }
+
+  .loader2 {
+    border: 6px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 6px solid #555;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: 20%;
+  }
+
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  div.imgmod img {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  div.imgmod img:hover {
+    opacity: 0.7;
+  }
+
+  /* The Modal (background) */
+  .modal2 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 4;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content2 {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+
+  /* Add Animation */
+  .modal-content2,
+  #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(0)
+    }
+
+    to {
+      -webkit-transform: scale(1)
+    }
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(0.1)
+    }
+
+    to {
+      transform: scale(1)
+    }
+  }
+
+  /* The Close Button */
+  .closeimg {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .closeimg:hover,
+  .closeimg:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .containericon {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    xmargin: 0 0 2px 0;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+
+  button.accordion.activeacc,
+  button.accordion:hover {
+    background-color: #ddd;
+  }
+
+  button.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+
+  button.accordion.activeacc:after {
+    content: "\2796";
+  }
+
+  div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.45s ease-in-out;
+    opacity: 0;
+  }
+
+  .panel.showpanel {
+    opacity: 1;
+    max-height: 500px;
+  }
+
+  .chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 17px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+  }
+
+  .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .closechip {
+    padding-left: 10px;
+    color: #999;
+    float: right;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .closechip:hover {
+    color: #000;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    transition: .5s;
+  }
+
+  .overlay a,
+  .overlay2 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: .3s;
+  }
+
+  .overlay a:hover,
+  .overlay a:focus,
+  .overlay2 a:hover {
+    color: #f1f1f1;
+  }
+
+  .closebtnOverlay {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px !important;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  @media screen and (max-height: 500px) {
+
+    .overlay a,
+    .overlay2 a {
+      font-size: 20px
+    }
+
+    .closebtnOverlay {
+      font-size: 40px !important;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+  .overlay2 {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: auto;
+    overflow: hidden;
+    text-align: center;
+    transition: .5s;
+  }
+
+  .overlay3 {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    transition: background-color .5s;
+  }
+
+  .offcanvas {
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    position: fixed;
+    z-index: 3;
+    overflow-x: hidden;
+    transition: .5s;
+    padding-top: 60px;
+  }
+
+  .offcanvas a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none !important;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: .3s
+  }
+
+  .offcanvas a:hover,
+  .offcanvas a:focus {
+    color: #f1f1f1;
+  }
+
+  .closeOffcanvas {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+  }
+
+  #testtest {
+    transition: margin-left .5s;
+  }
+
+  @media screen and (max-height: 500px) {
+    .offcanvas {
+      padding-top: 15px;
+    }
+
+    .offcanvas a {
+      font-size: 18px;
+    }
+  }
+
+  ul.paginationw3 {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul.paginationw3 li {
+    display: inline;
+  }
+
+  ul.paginationw3 li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+
+  ul.paginationw3 li a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  ul.paginationw3 li a:hover:not(.active) {
+    background-color: #ddd;
+  }
+
+  input[type=text]#myInp {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width .4s ease-in-out;
+    transition: width .4s ease-in-out;
+  }
+
+  input[type=text]#myInp:focus {
+    width: 100%;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #ccc;
+    cursor: help;
+    color: #006080;
+  }
+
+  .tooltip:hover {
+    border-bottom: 1px dotted #000;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.6s;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tooltip-right {
+    top: -5px;
+    left: 125%;
+  }
+
+  .tooltip-right::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+  }
+
+  .tooltip-bottom {
+    top: 135%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .tooltip-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+  }
+
+  .tooltip-top {
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .tooltip-top::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  .tooltip-left {
+    top: -5px;
+    bottom: auto;
+    right: 128%;
+  }
+
+  .tooltip-left::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #555;
+  }
+
+  .alert {
+    padding: 18px;
+    background-color: #f44336;
+    color: white;
+    opacity: 0.83;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+  }
+
+  .alert.success {
+    background-color: #4CAF50;
+  }
+
+  .alert.info {
+    background-color: #2196F3;
+  }
+
+  .alert.warning {
+    background-color: #ff9800;
+  }
+
+  .closebtnalert {
+    padding-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .closebtnalert:hover {
+    color: black;
+  }
+
+  .month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #1abc9c;
+  }
+
+  .month ul {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .month .prev {
+    float: left;
+    padding-top: 15px;
+  }
+
+  .month .next {
+    float: right;
+    padding-top: 15px;
+  }
+
+  .weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+  }
+
+  .weekdays li {
+    display: inline-block;
+    width: 13.1%;
+    color: #666;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+  }
+
+  .days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.1%;
+    text-align: center;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: #777;
+  }
+
+  .days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+  }
+
+  @media screen and (max-width:1087px) {
+
+    .weekdays li,
+    .days li {
+      width: 12.5%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .weekdays li,
+    .days li {
+      width: 13.5%;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+
+    .weekdays li,
+    .days li {
+      width: 13.1%;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+
+    .weekdays li,
+    .days li {
+      width: 12.8%;
+    }
+  }
+
+  .icon-barv {
+    height: 100%;
+    width: 60px;
+    text-align: center;
+    background-color: #555;
+    xposition: fixed;
+    z-index: 1;
+    overflow: auto;
+  }
+
+  .icon-barv a {
+    padding: 8px;
+    display: block;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 30px;
+  }
+
+  .icon-barv a:hover {
+    background-color: #000;
+  }
+
+  .icon-barv a.active,
+  .icon-barh a.active {
+    background-color: #4CAF50 !important;
+  }
+
+  .icon-barh {
+    width: 100%;
+    text-align: center;
+    background-color: #555;
+    z-index: 1;
+    overflow: auto;
+  }
+
+  .icon-barh a {
+    width: 20%;
+    padding: 12px 0;
+    float: left;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 25px;
+  }
+
+  .icon-barh a:hover {
+    background-color: #000;
+  }
+
+  ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+
+  /* Float the list items side by side */
+  ul.tab li {
+    float: left;
+  }
+
+  /* Style the links inside the list items */
+  ul.tab li a {
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of links on hover */
+  ul.tab li a:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  ul.tab li a:focus,
+  .tabactive {
+    background-color: #d1d1d1;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+  }
+
+  @-webkit-keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    .tokyotab {
+      display: none !important
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch .inputdemo {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .inputdemo:checked+.slider {
+    background-color: #2196F3;
+  }
+
+  .inputdemo:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  .inputdemo:checked+.slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(26px);
+  }
+
+
+  .price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+  }
+
+  .price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2)
+  }
+
+  .price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+  }
+
+  .price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .price .grey {
+    background-color: #eee;
+    font-size: 20px;
+  }
+
+  .buttonprice {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+
+  @-webkit-keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 22px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 22px;
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeout {
+    from {
+      bottom: 22px;
+      opacity: 1;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      bottom: 22px;
+      opacity: 1;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+</style>
+<style>
+  #myDIVsnack {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 18px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 22px;
+    margin-left: -175px;
+  }
+
+  .showsnack {
+    visibility: visible !important;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+</style>
+
+
+<html>
+<head>
+	<!-- style here -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Snackbars / Toasts</h2>
+	  <button onclick="showSnack()" class="OA3Css-btn OA3Css-black">Show Snackbar</button>
+	  <div id="myDIVsnack" class="">Snackbar text that will last for 3 seconds.</div>
+	  <script>
+		function showSnack() {
+		  var x = document.getElementById("myDIVsnack")
+		  x.className = "showsnack";
+		  setTimeout(function () { x.className = x.className.replace("showsnack", ""); }, 3000);
+		}
+	  </script>
+	  <p><a href="http://www.w3schools.com/howto/howto_js_snackbar.asp">Learn How To</a></p>
+	</div>
+
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Tooltips</h2>
+	  <div class="OA3Css-row OA3Css-center" style="margin-top:35px;margin-bottom:35px;">
+
+		<div class="OA3Css-quarter">
+		  <div class="tooltip">Top
+			<span class="tooltiptext tooltip-top">Tooltip text</span>
+		  </div>
+		</div>
+
+		<div class="OA3Css-quarter">
+		  <div class="tooltip">Right
+			<span class="tooltiptext tooltip-right">Tooltip text</span>
+		  </div>
+		</div>
+
+		<div class="OA3Css-quarter">
+		  <div class="tooltip">Bottom
+			<span class="tooltiptext tooltip-bottom">Tooltip text</span>
+		  </div>
+		</div>
+
+		<div class="OA3Css-quarter">
+		  <div class="tooltip">Left
+			<span class="tooltiptext tooltip-left">Tooltip text</span>
+		  </div>
+		</div>
+	  </div>
+	  <p style="clear:both"><a href="http://www.w3schools.com/howto/howto_css_tooltip.asp">Learn How To</a></p>
+	</div>
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+	<div class="OA3Css-container">
+	  <h2>Accordion</h2>
+	  <button class="accordion" id="myfirstAcc">Section 1</button>
+	  <div class="panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+		  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		  consequat.</p>
+	  </div>
+
+	  <button class="accordion" id="myfirstAcc">Load More 4</button>
+	  <div class="panel">
+		<p>Hello1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+		  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+		  commodo consequat.</p>
+		<p>Hello 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+		  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+		  commodo consequat.</p>
+		<p>Hello Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+		  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+		  commodo consequat.</p>
+	  </div>
+
+
+
+	  <button class="accordion">Section 2</button>
+	  <div class="panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+		  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		  consequat.</p>
+	  </div>
+
+	  <button class="accordion">Section 3</button>
+	  <div class="panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+		  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		  consequat.</p>
+	  </div>
+
+	  <p><a href="http://www.w3schools.com/howto/howto_js_accordion.asp">Learn How To</a></p>
+	  <script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+		  acc[i].onclick = function () {
+			this.classList.toggle("activeacc");
+			this.nextElementSibling.classList.toggle("showpanel");
+		  }
+		}
+	  </script>
+	  <script>
+		var myaccbtn = document.getElementById("myfirstAcc");
+		myaccbtn.click();
+	  </script>
+
+	</div>
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Responsive Top Navigation</h2>
+	  <p><iframe src="./W3 How TO_files/tryhow_js_topnav_iframe.html"
+		  style="width:100%;border:none;height:200px;overflow:hidden;"></iframe></p>
+	  <p><a href="http://www.w3schools.com/howto/howto_js_topnav.asp">Learn How To</a></p>
+	</div>
+
+	<body>
+	  <style>
+		body {
+		  margin: 0;
+		}
+
+		ul.topnav_responsive {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  background-color: #333;
+		}
+
+		ul.topnav_responsive li {
+		  float: left;
+		}
+
+		ul.topnav_responsive li a {
+		  display: inline-block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  transition: 0.3s;
+		  font-size: 17px;
+		}
+
+		ul.topnav_responsive li a:hover {
+		  background-color: #555;
+		}
+
+		ul.topnav_responsive li.icon {
+		  display: none;
+		}
+
+		@media screen and (max-width:400px) {
+		  ul.topnav_responsive li:not(:first-child) {
+			display: none;
+		  }
+
+		  ul.topnav_responsive li.icon {
+			float: right;
+			display: inline-block;
+		  }
+		}
+
+		@media screen and (max-width:600px) {
+		  ul.topnav_responsive.responsive {
+			position: relative;
+		  }
+
+		  ul.topnav_responsive.responsive li.icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+		  }
+
+		  ul.topnav_responsive.responsive li {
+			float: none;
+			display: inline;
+		  }
+
+		  ul.topnav_responsive.responsive li a {
+			display: block;
+			text-align: left;
+		  }
+		}
+	  </style>
+
+
+	  <div class="ResponsiveTopNavigation" id="">
+		<ul class="topnav_responsive" id="ResponsiveTopNavigation_myTopnav">
+		  <li><a class="active" href="http://www.w3schools.com/howto/tryhow_js_topnav_iframe.htm#home">Home</a></li>
+		  <li><a href="http://www.w3schools.com/howto/tryhow_js_topnav_iframe.htm#news">News</a></li>
+		  <li><a href="http://www.w3schools.com/howto/tryhow_js_topnav_iframe.htm#contact">Contact</a></li>
+		  <li><a href="http://www.w3schools.com/howto/tryhow_js_topnav_iframe.htm#about">Aboutaaaaaaa</a></li>
+		  <li class="icon">
+			<a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+		  </li>
+		</ul>
+	  </div>
+
+	  <script>
+		function nav_myFunction() {
+		  var x = document.getElementById("ResponsiveTopNavigation_myTopnav");
+		  if (x.className === "topnav") {
+			x.className += " responsive";
+		  } else {
+			x.className = "topnav";
+		  }
+		}
+	  </script>
+
+
+	</body>
+
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+	http://localhost/omarahmed_projects/hasti4/main/clients/index.php#Menue
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Toggle Switch</h2>
+	  <div class="OA3Css-padding-16">
+		<label class="switch OA3Css-margin-right">
+		  <input type="checkbox" class="inputdemo">
+		  <div class="slider"></div>
+		</label>
+
+		<label class="switch">
+		  <input type="checkbox" checked="" class="inputdemo">
+		  <div class="slider"></div>
+		</label>
+		<br><br>
+
+		<label class="switch OA3Css-margin-right">
+		  <input type="checkbox" class="inputdemo">
+		  <div class="slider round"></div>
+		</label>
+
+		<label class="switch">
+		  <input type="checkbox" checked="" class="inputdemo">
+		  <div class="slider round"></div>
+		</label>
+	  </div>
+	  <p><a href="http://www.w3schools.com/howto/howto_css_switch.asp">Learn How To</a></p>
+	</div>
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Notes</h2>
+	  <div class="OA3Css-panel OA3Css-warning">
+		<p><strong>Danger!</strong> Some text...</p>
+	  </div>
+
+	  <div class="OA3Css-panel OA3Css-info">
+		<p><strong>Success!</strong> Some text...</p>
+	  </div>
+
+	  <div class="OA3Css-panel OA3Css-success">
+		<p><strong>Info!</strong> Some text...</p>
+	  </div>
+
+	  <div class="OA3Css-panel OA3Css-note">
+		<p><strong>Warning!</strong> Some text...</p>
+	  </div>
+	  <p><a href="http://www.w3schools.com/howto/howto_css_notes.asp">Learn How To</a></p>
+	</div>
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Alerts</h2>
+	  <div class="alert">
+		<span class="closebtnalert">&times;</span>
+		<strong>Danger!</strong>
+	  </div>
+	  <div class="alert success">
+		<span class="closebtnalert">&times;</span>
+		<strong>Success!</strong>
+	  </div>
+
+	  <div class="alert info">
+		<span class="closebtnalert">&times;</span>
+		<strong>Info!</strong>
+	  </div>
+
+	  <div class="alert warning">
+		<span class="closebtnalert">&times;</span>
+		<strong>Warning!</strong>
+	  </div>
+
+	  <script>
+		var closealert = document.getElementsByClassName("closebtnalert");
+		var i;
+
+		for (i = 0; i < closealert.length; i++) {
+		  closealert[i].onclick = function () {
+			var div = this.parentElement;
+			div.style.opacity = "0";
+			setTimeout(function () { div.style.display = "none"; }, 500);
+		  }
+		}
+	  </script>
+	  <p><a href="http://www.w3schools.com/howto/howto_js_alert.asp">Learn How To</a></p>
+	</div>
+
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Animated Seach Form</h2>
+	  <input id="myInp" type="text" name="search" placeholder="Search..">
+	  <p><a href="http://www.w3schools.com/howto/howto_css_animated_search.asp">Learn How To</a></p>
+	</div>
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Contact Chips</h2>
+	  <div class="chip">
+		<img src="./W3 How TO_files/img_avatar.png" alt="Person" width="96" height="96">
+		John Doe
+		<span class="closechip" onclick="this.parentElement.style.display='none'">&times;</span>
+	  </div>
+	  <p><a href="http://www.w3schools.com/howto/howto_css_contact_chips.asp">Learn How To</a></p>
+	</div>
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Filter Tables</h2>
+	  <input type="text" id="myInputTableSearch_OA_" onkeyup="myTableSearch_OA_Function()" placeholder="Search for names.."
+		title="Type in a name">
+
+	  <table id="myTableSearch_OA_">
+		<tbody>
+		  <tr class="OA3Css-light-grey">
+			<th style="width:60%;">Name</th>
+			<th style="width:40%;">Country</th>
+		  </tr>
+		  <tr>
+			<td>Alfreds Futterkiste</td>
+			<td>Germany</td>
+		  </tr>
+		  <tr>
+			<td>Berglunds snabbkop</td>
+			<td>Sweden</td>
+		  </tr>
+		  <tr>
+			<td>Island Trading</td>
+			<td>UK</td>
+		  </tr>
+		  <tr>
+			<td>Koniglich Essen</td>
+			<td>Germany</td>
+		  </tr>
+		  <tr>
+			<td>Laughing Bacchus Winecellars</td>
+			<td>Canada</td>
+		  </tr>
+		  <tr>
+			<td>Magazzini Alimentari Riuniti</td>
+			<td>Italy</td>
+		  </tr>
+		  <tr>
+			<td>North/South</td>
+			<td>UK</td>
+		  </tr>
+		  <tr>
+			<td>Paris specialites</td>
+			<td>France</td>
+		  </tr>
+		</tbody>
+	  </table>
+	  <script>
+		function myTableSearch_OA_Function() {
+		  var input, filter, table, tr, td, i;
+		  input = document.getElementById('myInputTableSearch_OA_');
+		  filter = input.value.toUpperCase();
+		  table = document.getElementById("myTableSearch_OA_");
+		  tr = table.getElementsByTagName('tr');
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName('td')[0];
+			if (td) {
+			  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = '';
+			  } else {
+				tr[i].style.display = 'none';
+			  }
+			}
+		  }
+		}
+	  </script>
+	  <p><a href="http://www.w3schools.com/howto/howto_js_filter_table.asp">Learn How To</a></p>
+	</div>
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+	<div class="OA3Css-card-4 OA3Css-container">
+	  <h2>Filter Lists</h2>
+	  <input type="text" id="myFilterList_oa_eInput" onkeyup="myFilterList_oa_eFunction()" placeholder="Search for names.."
+		title="Type in a name">
+
+	  <ul id="myFilterList_oa_eUL">
+		<li><a href="javascript:void(0)" class="header">A</a></li>
+		<li><a href="javascript:void(0)">Adele</a></li>
+		<li><a href="javascript:void(0)">Agnes</a></li>
+
+		<li><a href="javascript:void(0)" class="header">B</a></li>
+		<li><a href="projects.php?Ad=1&Co">
+			<h4>Projects</h4>
+			<p>example kljdfkjkl </p>Billy
+		  </a></li>
+		<li><a href="javascript:void(0)">Billy</a></li>
+		<li><a href="javascript:void(0)">Bob</a></li>
+
+		<li><a href="javascript:void(0)" class="header">C</a></li>
+		<li><a href="javascript:void(0)">Calvin</a></li>
+	  </ul>
+
+	  <script>
+		function myFilterList_oa_eFunction() {
+		  var input, filter, ul, li, a, i;
+		  input = document.getElementById('myFilterList_oa_eInput');
+		  filter = input.value.toUpperCase();
+		  ul = document.getElementById("myFilterList_oa_eUL");
+		  li = ul.getElementsByTagName('li');
+		  for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName('a')[0];
+			if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+			  li[i].style.display = '';
+			} else {
+			  li[i].style.display = 'none';
+
+			}
+		  }
+		}
+	  </script>
+	  <p><a href="http://www.w3schools.com/howto/howto_js_filter_lists.asp">Learn How To</a></p>
+	</div>
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+
+	<div class="OA3Css-half">
+
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Calendar</h2>
+		<div class="month">
+		  <ul>
+			<li class="prev">❮</li>
+			<li class="next">❯</li>
+			<li style="text-align:center">
+			  August<br>
+			  <span style="font-size:18px">2016</span>
+			</li>
+		  </ul>
+		</div>
+
+		<ul class="weekdays">
+		  <li>Mo</li>
+		  <li>Tu</li>
+		  <li>We</li>
+		  <li>Th</li>
+		  <li>Fr</li>
+		  <li>Sa</li>
+		  <li>Su</li>
+		</ul>
+
+		<ul class="days">
+		  <li>1</li>
+		  <li>2</li>
+		  <li>3</li>
+		  <li>4</li>
+		  <li>5</li>
+		  <li>6</li>
+		  <li>7</li>
+		  <li>8</li>
+		  <li>9</li>
+		  <li><span class="active">10</span></li>
+		  <li>11</li>
+		  <li>12</li>
+		  <li>13</li>
+		  <li>14</li>
+		  <li>15</li>
+		  <li>16</li>
+		  <li>17</li>
+		  <li>18</li>
+		  <li>19</li>
+		  <li>20</li>
+		  <li>21</li>
+		  <li>22</li>
+		  <li>23</li>
+		  <li>24</li>
+		  <li>25</li>
+		  <li>26</li>
+		  <li>27</li>
+		  <li>28</li>
+		  <li>29</li>
+		  <li>30</li>
+		  <li>31</li>
+		</ul>
+		<p><a href="http://www.w3schools.com/howto/howto_css_calendar.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Animated Buttons</h2>
+		<button class="pressed"><span>Click Me</span></button>
+		<p><a href="http://www.w3schools.com/howto/howto_css_animate_buttons.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Modal Boxes</h2>
+		<p><button onclick="document.getElementById('id01').style.display='block'"
+			class="OA3Css-btn OA3Css-teal OA3Css-large OA3Css-padding">Open Modal</button></p>
+
+		<div id="id01" class="OA3Css-modal">
+		  <div class="OA3Css-modal-content OA3Css-animate-top OA3Css-card-8">
+			<header class="OA3Css-container OA3Css-teal">
+			  <span onclick="document.getElementById('id01').style.display='none'"
+				class="OA3Css-xxlarge OA3Css-closebtn">&times;</span>
+			  <h2>Modal Header</h2>
+			</header>
+			<div class="OA3Css-container">
+			  <p>Hello World!</p>
+			  <p>Modals are awesome!</p>
+			  <p>Go Back To <a href="http://www.w3schools.com/howto/default.asp" class="OA3Css-btn OA3Css-teal">W3 How TO</a>
+				Examples</p>
+			</div>
+			<footer class="OA3Css-container OA3Css-teal">
+			  <p>Modal Footer</p>
+			</footer>
+		  </div>
+		</div>
+		<p><a href="http://www.w3schools.com/howto/howto_css_modals.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Modal Images</h2>
+		<div class="imgmod">
+		  <img id="eh" src="./W3 How TO_files/img_fjords.jpg" alt="Trolltunga, Norway" width="300" height="200">
+		</div>
+
+		<div id="myModal2" class="modal2">
+		  <span class="closeimg" onclick="document.getElementById('myModal2').style.display='none'">&times;</span>
+		  <img class="modal-content2" id="img02">
+		  <div id="caption"></div>
+		</div>
+		<p><a href="http://www.w3schools.com/howto/howto_css_modal_images.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Filter Lists</h2>
+		<input type="text" id="myFilterListInput" onkeyup="myFilterListFunction()" placeholder="Search for names.."
+		  title="Type in a name">
+
+		<ul id="myFilterListUL">
+		  <li><a href="javascript:void(0)" class="header">A</a></li>
+		  <li><a href="javascript:void(0)">Adele</a></li>
+		  <li><a href="javascript:void(0)">Agnes</a></li>
+
+		  <li><a href="javascript:void(0)" class="header">B</a></li>
+		  <li><a href="javascript:void(0)">Billy</a></li>
+		  <li><a href="javascript:void(0)">Bob</a></li>
+
+		  <li><a href="javascript:void(0)" class="header">C</a></li>
+		  <li><a href="javascript:void(0)">Calvin</a></li>
+		</ul>
+
+		<script>
+		  function myFilterListFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById('myFilterListInput');
+			filter = input.value.toUpperCase();
+			ul = document.getElementById("myFilterListUL");
+			li = ul.getElementsByTagName('li');
+			for (i = 0; i < li.length; i++) {
+			  a = li[i].getElementsByTagName('a')[0];
+			  if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = '';
+			  } else {
+				li[i].style.display = 'none';
+
+			  }
+			}
+		  }
+		</script>
+		<p><a href="http://www.w3schools.com/howto/howto_js_filter_lists.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Filter Tables</h2>
+		<input type="text" id="myInputTableSearch" onkeyup="myTableSearchFunction()" placeholder="Search for names.."
+		  title="Type in a name">
+
+		<table id="myTableSearch">
+		  <tbody>
+			<tr class="OA3Css-light-grey">
+			  <th style="width:60%;">Name</th>
+			  <th style="width:40%;">Country</th>
+			</tr>
+			<tr>
+			  <td>Alfreds Futterkiste</td>
+			  <td>Germany</td>
+			</tr>
+			<tr>
+			  <td>Berglunds snabbkop</td>
+			  <td>Sweden</td>
+			</tr>
+			<tr>
+			  <td>Island Trading</td>
+			  <td>UK</td>
+			</tr>
+			<tr>
+			  <td>Koniglich Essen</td>
+			  <td>Germany</td>
+			</tr>
+			<tr>
+			  <td>Laughing Bacchus Winecellars</td>
+			  <td>Canada</td>
+			</tr>
+			<tr>
+			  <td>Magazzini Alimentari Riuniti</td>
+			  <td>Italy</td>
+			</tr>
+			<tr>
+			  <td>North/South</td>
+			  <td>UK</td>
+			</tr>
+			<tr>
+			  <td>Paris specialites</td>
+			  <td>France</td>
+			</tr>
+		  </tbody>
+		</table>
+		<script>
+		  function myTableSearchFunction() {
+			var input, filter, table, tr, td, i;
+			input = document.getElementById('myInputTableSearch');
+			filter = input.value.toUpperCase();
+			table = document.getElementById("myTableSearch");
+			tr = table.getElementsByTagName('tr');
+			for (i = 0; i < tr.length; i++) {
+			  td = tr[i].getElementsByTagName('td')[0];
+			  if (td) {
+				if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				  tr[i].style.display = '';
+				} else {
+				  tr[i].style.display = 'none';
+				}
+			  }
+			}
+		  }
+		</script>
+		<p><a href="http://www.w3schools.com/howto/howto_js_filter_table.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Progress Bars</h2>
+		<div id="progress">
+		  <div id="bar"></div>
+		</div>
+		<p><button class="OA3Css-btn OA3Css-green OA3Css-left" onclick="progressMove()">Run</button> </p>
+		<div class="OA3Css-right" id="prlabel"></div>
+		<p></p>
+		<p style="margin-top:70px;clear:both;"><a href="http://www.w3schools.com/howto/howto_js_progressbar.asp">Learn How
+			To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Tooltips</h2>
+		<div class="OA3Css-row OA3Css-center" style="margin-top:35px;margin-bottom:35px;">
+
+		  <div class="OA3Css-quarter">
+			<div class="tooltip">Top
+			  <span class="tooltiptext tooltip-top">Tooltip text</span>
+			</div>
+		  </div>
+
+		  <div class="OA3Css-quarter">
+			<div class="tooltip">Right
+			  <span class="tooltiptext tooltip-right">Tooltip text</span>
+			</div>
+		  </div>
+
+		  <div class="OA3Css-quarter">
+			<div class="tooltip">Bottom
+			  <span class="tooltiptext tooltip-bottom">Tooltip text</span>
+			</div>
+		  </div>
+
+		  <div class="OA3Css-quarter">
+			<div class="tooltip">Left
+			  <span class="tooltiptext tooltip-left">Tooltip text</span>
+			</div>
+		  </div>
+		</div>
+		<p style="clear:both"><a href="http://www.w3schools.com/howto/howto_css_tooltip.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Popups</h2>
+		<div class="popup01 OA3Css-padding OA3Css-dark-grey" onclick="myFunctionpopup()">Toggle Popup!
+		  <span class="popuptext" id="myPopup01">A Simple Popup!</span>
+		</div>
+		<p><a href="http://www.w3schools.com/howto/howto_js_popup.asp">Learn How To</a></p>
+	  </div>
+
+	  <script>
+		// When the user clicks on div, open the popup
+		function myFunctionpopup() {
+		  var popup = document.getElementById('myPopup01');
+		  popup.classList.toggle('showpopup01');
+		}
+	  </script>
+
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>JavaScript Animations</h2>
+		<p><button class="OA3Css-btn OA3Css-green" onclick="animationMove()">Click Me</button></p>
+		<div id="container">
+		  <div id="animate"></div>
+		</div>
+		<p><a href="http://www.w3schools.com/howto/howto_js_animate.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>HTML Includes</h2>
+		<p>Include HTML snippets in HTML.</p>
+		<p><a href="http://www.w3schools.com/howto/howto_html_include.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Loaders</h2>
+		<p></p>
+		<div class="OA3Css-row">
+		  <div class="OA3Css-half">
+			<div class="loader"></div>
+		  </div>
+		  <div class="OA3Css-half">
+			<div class="loader2"></div>
+		  </div>
+		</div>
+		<p></p>
+		<p><a href="http://www.w3schools.com/howto/howto_css_loader.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Responsive Top Navigation</h2>
+		<p><iframe src="./W3 How TO_files/tryhow_js_topnav_iframe.html"
+			style="width:100%;border:none;height:200px;overflow:hidden;"></iframe></p>
+		<p><a href="http://www.w3schools.com/howto/howto_js_topnav.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Fullscreen Overlay Navigation</h2>
+		<div id="myNav" class="overlay">
+		  <a href="javascript:void(0)" class="closebtnOverlay" onclick="closeNav()">&times;</a>
+		  <div class="overlay-content">
+			<a href="javascript:void(0)">About</a>
+			<a href="javascript:void(0)">Services</a>
+			<a href="javascript:void(0)">Clients</a>
+			<a href="javascript:void(0)">Contact</a>
+		  </div>
+		</div>
+		<div id="myNav2" class="overlay2">
+		  <a href="javascript:void(0)" class="closebtnOverlay" onclick="closeNav2()">&times;</a>
+		  <div class="overlay-content">
+			<a href="javascript:void(0)">About</a>
+			<a href="javascript:void(0)">Services</a>
+			<a href="javascript:void(0)">Clients</a>
+			<a href="javascript:void(0)">Contact</a>
+		  </div>
+		</div>
+		<button class="OA3Css-btn OA3Css-black OA3Css-padding" onclick="openNav()">Slide Right</button>
+		<button class="OA3Css-btn OA3Css-black OA3Css-padding" onclick="openNav2()">Slide Down</button>
+		<p><a href="http://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp">Learn How To</a></p>
+	  </div>
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Animated Side Navigation</h2>
+		<div id="myCanvasNav" class="overlay3" onclick="closeOffcanvas()"></div>
+
+		<div id="myOffcanvas" class="offcanvas">
+		  <a href="javascript:void(0)" class="closeOffcanvas" onclick="closeOffcanvas()">&times;</a>
+		  <a href="javascript:void(0)">About</a>
+		  <a href="javascript:void(0)">Services</a>
+		  <a href="javascript:void(0)">Clients</a>
+		  <a href="javascript:void(0)">Contact</a>
+		</div>
+		<button class="OA3Css-btn OA3Css-black OA3Css-padding OA3Css-margin-bottom" onclick="openOffcanvas1()">Sidenav overlay</button><br>
+		<button class="OA3Css-btn OA3Css-black OA3Css-padding OA3Css-margin-bottom" onclick="openOffcanvas();">Sidenav push</button><br>
+		<button class="OA3Css-btn OA3Css-black OA3Css-padding" onclick="openNav3();openOffcanvas();">Sidenav push w/opacity</button>
+		<p><a href="http://www.w3schools.com/howto/howto_js_sidenav.asp">Learn How To</a></p>
+	  </div>
+
+	  <br>
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Icon Bar</h2>
+		<div class="OA3Css-row">
+
+		  <div class="OA3Css-col m3">
+			<p>Vertical:</p>
+			<div class="icon-barv">
+			  <a class="active" href="javascript:void(0)"><i class="fa fa-home"></i></a>
+			  <a href="javascript:void(0)"><i class="fa fa-search"></i></a>
+			  <a href="javascript:void(0)"><i class="fa fa-envelope"></i></a>
+			  <a href="javascript:void(0)"><i class="fa fa-globe"></i></a>
+			  <a href="javascript:void(0)"><i class="fa fa-trash"></i></a>
+			</div>
+		  </div>
+
+		  <div class="OA3Css-col m9">
+			<p>Horizontal:</p>
+			<div class="icon-barh">
+			  <a class="active" href="javascript:void(0)"><i class="fa fa-home"></i></a>
+			  <a href="javascript:void(0)"><i class="fa fa-search"></i></a>
+			  <a href="javascript:void(0)"><i class="fa fa-envelope"></i></a>
+			  <a href="javascript:void(0)"><i class="fa fa-globe"></i></a>
+			  <a href="javascript:void(0)"><i class="fa fa-trash"></i></a>
+			</div>
+		  </div>
+
+		</div>
+		<p><a href="http://www.w3schools.com/howto/howto_css_icon_bar.asp">Learn How To</a></p>
+	  </div>
+
+	  <br>
+
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Horizontal Scroll Menu</h2>
+		<div class="scrollmenu">
+		  <a href="javascript:void(0)">Home</a>
+		  <a href="javascript:void(0)">News</a>
+		  <a href="javascript:void(0)">Contact</a>
+		  <a href="javascript:void(0)">About</a>
+		  <a href="javascript:void(0)">Support</a>
+		  <a href="javascript:void(0)">Blog</a>
+		  <a href="javascript:void(0)">Tools</a>
+		  <a href="javascript:void(0)">Base</a>
+		  <a href="javascript:void(0)">Custom</a>
+		  <a href="javascript:void(0)">More</a>
+		  <a href="javascript:void(0)">Logo</a>
+		  <a href="javascript:void(0)">Friends</a>
+		  <a href="javascript:void(0)">Partners</a>
+		  <a href="javascript:void(0)">People</a>
+		  <a href="javascript:void(0)">Work</a>
+		</div>
+		<p><a href="http://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp">Learn How To</a></p>
+	  </div>
+
+	  <br>
+
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Fixed Menu</h2>
+		<p><iframe src="./W3 How TO_files/tryhow_css_fixed_menu.html"
+			style="width:100%;border:1px solid #ddd;;height:200px;overflow:hidden;"></iframe></p>
+		<p><a href="http://www.w3schools.com/howto/howto_css_fixed_menu.asp">Learn How To</a></p>
+	  </div>
+
+	  <br>
+
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Pricing Tables</h2>
+		<ul class="price" style="width:100%">
+		  <li class="header">Basic</li>
+		  <li class="grey">$ 9.99 / year</li>
+		  <li>10GB Storage</li>
+		  <li>10 Emails</li>
+		  <li>10 Domains</li>
+		  <li>1GB Bandwidth</li>
+		  <li class="grey"><a href="javascript:void(0)" class="buttonprice OA3Css-hover-green">Sign Up</a></li>
+		</ul>
+		<p><a href="http://www.w3schools.com/howto/howto_css_pricing_table.asp">Learn How To</a></p>
+	  </div>
+
+	  <br>
+
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Login Form</h2>
+		<button onclick="document.getElementById('loginModal').style.display='block'"
+		  class="OA3Css-btn-block OA3Css-green OA3Css-large">Login</button>
+
+		<div id="loginModal" class="OA3Css-modal" style="cursor:pointer;">
+		  <div class="OA3Css-modal-content OA3Css-card-8 OA3Css-animate-zoom" style="max-width:600px;cursor:auto">
+
+			<div class="OA3Css-center"><br>
+			  <span onclick="document.getElementById('loginModal').style.display='none'" title="Close Modal"
+				class="OA3Css-closebtn OA3Css-hover-text-grey OA3Css-container OA3Css-display-topright OA3Css-xxlarge">&times;</span>
+			  <img src="./W3 How TO_files/img_avatar2.png" alt="Avatar" style="width:40%" class="OA3Css-circle OA3Css-margin-top">
+			</div>
+
+			<div class="OA3Css-container">
+			  <div class="OA3Css-section">
+				<label><b>Username</b></label>
+				<input class="OA3Css-input OA3Css-border OA3Css-margin-bottom" type="text" placeholder="Enter Username">
+
+				<label><b>Password</b></label>
+				<input class="OA3Css-input OA3Css-border" type="text" placeholder="Enter Password">
+
+				<button class="OA3Css-btn OA3Css-btn-block OA3Css-green OA3Css-section OA3Css-padding"
+				  onclick="document.getElementById('loginModal').style.display='none'">Login</button>
+				<input class="OA3Css-check" type="checkbox" checked="checked"> Remember me
+			  </div>
+			</div>
+
+			<div class="OA3Css-container OA3Css-border-top OA3Css-padding-16 OA3Css-light-grey">
+			  <button onclick="document.getElementById('loginModal').style.display='none'" type="button"
+				class="OA3Css-btn OA3Css-red">Cancel</button>
+			  <span class="OA3Css-right OA3Css-padding OA3Css-hide-small">Forgot <a href="javascript:void(0)"
+				  onclick="document.getElementById('loginModal').style.display='none'">password?</a></span>
+			</div>
+
+		  </div>
+		</div>
+		<p><a href="http://www.w3schools.com/howto/howto_css_login_form.asp">Learn How To</a></p>
+	  </div>
+
+	  <br>
+
+	  <div class="OA3Css-card-4 OA3Css-container">
+		<h2>Animated Icons</h2>
+		<div id="charging" class="fa faicons"></div>
+		<p><a href="http://www.w3schools.com/howto/howto_js_animate_icons.asp">Learn How To</a></p>
+	  </div>
+
+	  <!-- End -->
+
+	</div>
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+
+
+
+
+	<hr />
+
+	<iframe src="./W3 How TO_files/tryhow_css_fixed_menu.html"
+	  style="width:100%;border:1px solid #ddd;;height:200px;overflow:hidden;">
+
+	</iframe>
+	<html>
+
+	<head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	  <style>
+		body {
+		  margin: 0;
+		}
+
+		.header-nav ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  background-color: #333;
+		  position: fixed;
+		  top: 0;
+		  width: 100%;
+		}
+
+		.header-nav li {
+		  float: left;
+		}
+
+		.header-nav li a {
+		  display: block;
+		  color: white;
+		  padding: 16px;
+		  text-decoration: none;
+		}
+
+		.main {
+		  padding: 16px;
+		  margin-top: 30px;
+		  height: 1500px;
+		  /* Used in this example to enable scrolling */
+		}
+	  </style>
+	</head>
+
+	<body>
+	  <div class="header-nav">
+		<ul>
+		  <li><a href="http://www.w3schools.com/howto/tryhow_css_fixed_menu.htm#home">Home</a></li>
+		  <li><a href="http://www.w3schools.com/howto/tryhow_css_fixed_menu.htm#news">News</a></li>
+		  <li><a href="http://www.w3schools.com/howto/tryhow_css_fixed_menu.htm#contact">Contact</a></li>
+		</ul>
+	  </div>
+	  <div class="main">
+		<h1>Fixed Top Menu</h1>
+		<h2>Scroll this page to see the effect</h2>
+		<h2>The navigation bar will stay at the top of the page while scrolling</h2>
+
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+		<p>Some text some text some text some text..</p>
+	  </div>
+
+
+	</body>
+
+	</html>
+	<hr />
+
+
+
+	<br />
+	___________--------------------_______________
+	<hr />
+	<?php 
+
+	/*
+	Ways of escaping from HTML
+	1. <?php echo("if you want to serve XHTML or XML documents, do like this\n"); ?>
+	2.
+	<? echo ("this is the simplest, an SGML processing instruction\n"); ?>
+	<?= expression ?> This is a shortcut for "
+	<? echo expression ?>"
+	3.
+	<script language="php">
+	  echo("some editors (like FrontPage) don't
+	like processing instructions");
+	</script>
+	4. <% echo ("You may optionally use ASP-style tags"); %>
+	  <%= $variable; # This is a shortcut for "<% echo . . ." %>
+
+		*/
+		?>
+
+
+		<br />
+		___________--------------------_______________
+		<hr />
+
+
+
+
+
+		<br />
+		___________--------------------_______________
+		<hr />
+
+
+
+
+
+		<br />
+		___________--------------------_______________
+		<hr />
+
+
+
+
+
+		<br />
+		___________--------------------_______________
+		<hr />
+
+
+
+
+
+		<br />
+		___________--------------------_______________
+		<hr />
+
+
+
+
+
+
+
+
+		<table border="0" align="center" width="100%" height="100%">
+
+		  <table width="100%" height="100%">
+			<td width="100%" height="80%" style="background:white; color:#333;overflow:auto; max-width:600px; ">
+
+
+
+			  <!-- Thumbnails  -->
+			  <table border="0" align="center" width="90%" height="100%">
+				<tr>
+				  <td colspan="3">
+					<p style="color:#ccc;">Here Some ContentHere Some ContentHere Some Content</p>
+				  </td>
+				</tr>
+				<tr>
+				  <td width="20%" height="80%" style=" text-align:center; ">
+					<h2 style=" "><a href="add_page.php">Arabic Programming language [+]</a> </h2>
+					<h4 style=" background:rgb(0,168,217); color:white;"> Arabic Programming language projects ( 0 ) <a
+						href="control_all_pages.php"> [+]</a></h4>
+				  </td>
+				  <td width="20%" height="50%" style=" text-align:center; ">
+					<h2 style=" "> <a href="control_all_pages.php"> Open Source Projects [+]</a> </h2>
+					<h4 style=" background:rgb(0,169,165); color:white;">Subcategory and Main Category <a
+						href="control_all_pages.php">CATEGORY [+]</a>.</h4>
+
+				  </td>
+				  <td width="20%" height="50%" style="text-align:center ;">
+					<h2 style=" "><a href="add_article.php"> PROJECT [+]</a>
+					</h2>
+					<h4 style="background:rgb(210,42,98); color:white; ">Add the details.</h4>
+
+				  </td>
+
+				</tr>
+			  </table>
+
+			</td>
+			</tr>
+		  </table>
+
+
+
+
+
+
+		  <pre>
+								1/16/22, 7:36 PM - O: *تحليل الموقع* :
+									- Home الصفحه الرئيسيه  
+									- Login 
+									- registration page
+									- bio page 
+									- search page
+									- categories page 
+									- project page (more details about product page +versions)
+									- about us + contact us. ..etc
+
+									==========
+									// example of info open source
+
+									/**
+									 * calendar extension Constant Exceptions dictionary for PHP_CompatInfo 1.9.0b2 or better
+									 *
+									 * PHP versions 5
+									 *
+									 * @category PHP
+									 * @package  PHP_CompatInfo
+									 * @author   Davey Shafik <davey@php.net>
+									 * @author   Laurent Laville <pear@laurent-laville.org>
+									 * @license  http://www.opensource.org/licenses/bsd-license.php  BSD
+									 * @version  CVS: $Id: calendar_const_exceptions.php,v 1.1 2008/12/28 19:47:37 farell Exp $
+									 * @link     http://pear.php.net/package/PHP_CompatInfo
+									 * @link     http://www.php.net/manual/en/calendar.constants.php
+									 * @since    version 1.9.0 (2009-01-19)
+									 */
+
+
+									==========
+									 
+									oa_opensource_proj_o_v4_os_db
+									 
+									- users_tb
+									id name email user_password user_name type_user description_profile account_setting
+										<a href="user_setting.php">user_setting.php</a>
+										<hr />
+
+									- projects_tb
+									id logo_img proj_class user_id name description published_date date_last_update proj_status version_num cat_id downloads_num 
+										<a target="_blank" href="projects.php">projects.php</a>
+										<hr />
+
+
+									issue.php
+									- issue_tb
+									id name_project owner contributer pages_modified statues date
+										<a target="_blank" href="issue.php">issue.php</a>
+										<hr />
+
+									 
+									 
+									- categories_tb
+									id name sub_cat user_id statues
+										<a target="_blank" href="categories.php">categories.php</a>
+										<hr />
+
+									- comments_tb
+									id comment project_id user_id date
+										<a target="_blank" href="comments.php">comments.php</a>
+										<hr />
+
+									like_opinion.php
+									- like_opinion_tb
+									id like_unlike_name project_id user_id page_comm_proj_usr date
+										<a target="_blank" href="like_opinion.php">like_opinion.php</a>
+										<hr />
+
+									img.php
+									- tb_uploaded_file
+									idfile srcfi fkid
+										<a target="_blank" href="img.php">img.php</a>
+										<hr />
+
+									- website_setting_tb
+									id name keywords statues authors logs
+										<a target="_blank" href="website_setting.php">website_setting.php</a>
+										<hr />
+
+									- admin_tb
+									id name email pass auth type_user
+										<a target="_blank" href="admin.php">admin.php</a>
+										<hr />
+
+										<hr />
+									>> Read Files Projects
+										<a target="_blank" href="../project/open_dir.php">List All Projects Lists </a>
+										<hr />
+										
+										
+										
+										<hr />
+									>X Files Projects Examples
+										<a target="_blank" href="../project/files_zip.php">Projects Lists </a>
+										<hr />
+										
+									XX Error handling example
+										<a target="_blank" href="page_error_handling.php">Error Handling  </a>
+										<hr />
+
+								</pre>
+
+
+
+
+
+      <?php include_once("load_all_includes_footer.php"); ?>
