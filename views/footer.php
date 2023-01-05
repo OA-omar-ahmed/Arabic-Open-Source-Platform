@@ -6,8 +6,8 @@
 				<li class="headli" ><a href="contactus.php" title="Contact us" >تواصل معنا</a></li>
 				<li class="headli" ><a href="index.php#ourteam" title="Policies" >اللوائح والقوانين</a></li>
 				<li class="headli" ><a href="our_community.php#ourteam" title=" Our Community" >👥 مجتمعنا</a></li>
-				 
-				<li class="headli" ><a href="home.php" title="Contact us" >الرئيسية</a></li>
+				<li class="headli" ><a href="video_about_project.mp4" title=" haw to use it " >📽️ كيفية الاستخدام</a></li>
+				<li class="headli" ><a href="https://github.com/OA-omar-ahmed/Arabic-Open-Source-Platform" title="This Project in Github" ><img src="../assets/images/github_download.png" width="50" height="auto" /></a></li>
 			</ul>
 			<br />
 			<br />
